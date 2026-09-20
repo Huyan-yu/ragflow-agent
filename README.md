@@ -140,8 +140,3 @@ DELETE /api/kb            # 清空索引
 | `get_weather` | 查询天气（模拟） | 用户问天气 |
 | `search_knowledge_base` | RAG 知识库检索 | 用户问领域知识 |
 
-## 简历项目描述（可直接填入简历）
-
-> **项目名称**：RAGFlow Agent — 基于 LangChain 的 RAG + 工具调用 AI Agent 系统
->
-> 基于 Python + LangChain + FastAPI 开发 AI Agent 应用，集成 RAG 知识库检索（FAISS 向量库 + 文档分块 + 检索增强生成）与大模型工具调用（Function Calling），支持多轮对话、工具自主选择与 RAG 引用溯源。设计模块化架构（Agent 核心 / 工具层 / RAG 层 / 会话记忆），实现计算器、天气查询、知识库检索三类工具；FastAPI 提供 RESTful 接口，支持流式 SSE 响应；前端实现对话界面与工具调用过程可视化。
