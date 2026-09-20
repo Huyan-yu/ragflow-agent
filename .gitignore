@@ -1,0 +1,19 @@
+# 环境变量（含 API Key，禁止提交）
+.env
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 生成的数据目录
+data/faiss_index/
+data/hf_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# 系统文件
+.DS_Store
+Thumbs.db
