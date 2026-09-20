@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RAGFlow Agent — 智能知识问答</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="app">
+
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>RAGFlow Agent</h1>
+            <p class="subtitle">RAG + 工具调用 AI Agent</p>
+        </div>
+
+        <div class="section">
+            <h2>工具列表</h2>
+            <ul class="tool-list">
+                <li><span class="tool-icon">🔢</span> calculate<span class="tool-desc">数学计算</span></li>
+                <li><span class="tool-icon">🌤️</span> get_weather<span class="tool-desc">天气查询</span></li>
+                <li><span class="tool-icon">📚</span> search_knowledge_base<span class="tool-desc">知识库检索</span></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>知识库管理</h2>
+            <button id="btn-import" class="btn btn-primary">📤 导入文档</button>
+            <button id="btn-status" class="btn">📊 查看状态</button>
+            <button id="btn-reset" class="btn btn-danger">🗑️ 清空知识库</button>
+            <input type="file" id="file-input" multiple hidden accept=".md,.json"/>
+            <pre id="kb-status" class="kb-status"></pre>
+        </div>
+
+        <div class="section">
+            <h2>会话</h2>
+            <button id="btn-new" class="btn">＋ 新对话</button>
+            <span id="session-id" class="session-label">无会话</span>
+        </div>
+    </aside>
+
+    <!-- 主区域 -->
+    <main class="main">
+        <div id="chat-container" class="chat-container">
+            <div class="empty-state">
+                <div class="empty-icon">🤖</div>
+                <p>试试问我：</p>
+                <div class="suggestions">
+                    <button class="suggestion" data-q="帮我计算 (2+3)*4 平方根是多少？">帮我计算 (2+3)*4 平方根是多少？</button>
+                    <button class="suggestion" data-q="广州今天天气怎么样？">广州今天天气怎么样？</button>
+                    <button class="suggestion" data-q="出差住宿标准是多少？">出差住宿标准是多少？</button>
+                    <button class="suggestion" data-q="RAGFlow 平台支持哪些模型？">RAGFlow 平台支持哪些模型？</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 输入区 -->
+        <div class="input-area">
+            <textarea
+                id="msg-input"
+                rows="2"
+                placeholder="输入消息，Enter 发送，Shift+Enter 换行"
+            ></textarea>
+            <button id="btn-send" class="btn btn-primary btn-send">发送</button>
+        </div>
+    </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

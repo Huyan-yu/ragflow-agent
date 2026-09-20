@@ -1,0 +1,42 @@
+{
+  "product_name": "RAGFlow 开放平台",
+  "version": "1.0",
+  "description": "面向企业的 AI Agent 应用开发平台，支持知识库管理、Agent 编排、工具调用三大核心模块",
+  "modules": [
+    {
+      "name": "知识库管理",
+      "features": [
+        "支持 Markdown、PDF、Word、JSON 格式文档导入",
+        "自动分块与向量化，支持自定义分块策略",
+        "多租户隔离，权限管理",
+        "支持增量更新与全文检索"
+      ]
+    },
+    {
+      "name": "Agent 编排",
+      "features": [
+        "可视化工作流编辑器",
+        "支持串行、并行、条件分支三种流程结构",
+        "内置 20+ 预制 Agent 模板（客服、代码助手、数据分析等）",
+        "支持多 Agent 协作与消息传递"
+      ]
+    },
+    {
+      "name": "工具调用",
+      "features": [
+        "标准 Function Calling 协议",
+        "支持 HTTP API、本地函数、数据库查询三类工具",
+        "工具调用日志与审计",
+        "工具沙箱隔离运行"
+      ]
+    }
+  ],
+  "api_endpoints": [
+    {"method": "POST", "path": "/v1/chat", "desc": "多轮对话（含工具调用）"},
+    {"method": "POST", "path": "/v1/kb/import", "desc": "导入知识库文档"},
+    {"method": "GET", "path": "/v1/kb/search", "desc": "知识库检索"},
+    {"method": "POST", "path": "/v1/agents", "desc": "创建 Agent 工作流"}
+  ],
+  "supported_models": ["GPT-4o", "DeepSeek-V3", "Qwen-72B", "Llama-3-70B"],
+  "deployment": "支持 Docker 一键部署，兼容 K8s 集群部署"
+}
